@@ -9,11 +9,8 @@ type Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Data>
 ) {
-  if(req.method === "GET") {
-    const query = allPostsQuery();
-
-    //const data = await client...
-  }
+  res.status(200).json({name: "Response Success" })
 }
+
