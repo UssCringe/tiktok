@@ -7,10 +7,15 @@ type Data = {
   name: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({name: "Response Success" })
-}
+  res: NextApiResponse
+  ) {
+  if(req.method === "GET") {
+    const query = allPostsQuery();
 
+    const data = await client.fetch(query);
+
+    res.status(200).json(data);
+  }
+}
