@@ -13,5 +13,7 @@ export const createOrGetUser = async (response: any) => {
     image: picture
   }
 
+  
+
   await axios.post('api/auth', user)
 }
