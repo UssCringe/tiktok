@@ -27,8 +27,8 @@ const Upload = () => {
         .then((data) => {
           console.log(data)
         })
-        .catch(() => {
-          console.error("Upload failed")
+        .catch((error) => {
+          console.log("Upload failed: ", error)
         })
 
     } else {
