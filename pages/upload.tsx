@@ -166,7 +166,7 @@ const Upload = () => {
           <label className='text-md font-medium '>Choose a topic</label>
 
           <select
-            onChange={(e: any)=>{setCategory(e.target.value)}}
+            onChange={(e)=>{setCategory(e.target.value)}}
             className='outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer'
           >
             {topics.map((item) => (
