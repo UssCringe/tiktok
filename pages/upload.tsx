@@ -7,7 +7,7 @@ import axios from 'axios'
 import useAuthStore from '../store/authStore'
 import { client } from "../utils/client"
 import { SanityAssetDocument } from '@sanity/client'
-import { createReadStream } from 'fs'
+import fs, { createReadStream } from 'fs'
 
 const Upload = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -20,19 +20,18 @@ const Upload = () => {
 
     // uploading asset to sanity
     if (fileTypes.includes(selectedFile.type)) {
-      console.log(selectedFile.type, selectedFile.name)
+      console.log("correct file type", selectedFile.type, selectedFile.name)
       
-      client.assets
-        .upload('file', selectedFile, { contentType: selectedFile.type, filename: selectedFile.name })
+      client.assets.upload('file', selectedFile, { contentType: selectedFile.type, filename: selectedFile.name })
         .then((data) => {
-          console.log(data)
+          console.log("Upload Success: ", data)
         })
         .catch((error) => {
           console.log("Upload failed: ", error)
         })
 
     } else {
-
+      
     }
   };
 
