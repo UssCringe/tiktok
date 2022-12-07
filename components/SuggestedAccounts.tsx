@@ -34,6 +34,15 @@ const SuggestedAccounts = () => {
                   layout='responsive'
                 />
               </div>
+              <div className='hidden xl:block'>
+                <p className='flex gap-1 items-center text-base font-bold text-primary lowercase'>
+                  {user.userName.replaceAll(" ", "")}
+                  <GoVerified className='text-blue-400' />
+                </p>
+                <p className='capitlaize text-gray-400 text-xs'> 
+                  {user.userName}
+                </p>
+              </div>
             </div>
           </Link>
         ))}
