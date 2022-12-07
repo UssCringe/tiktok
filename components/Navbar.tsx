@@ -16,7 +16,7 @@ import useAuthStore from '../store/authStore'
 const Navbar = () => {
   const [searchValue, setSearchValue] = useState("")
 
-  const { userProfile, addUser, removeUser } = useAuthStore();
+  const { userProfile, addUser, removeUser }: any = useAuthStore();
 
   const handleSearch = (e: {preventDefault: () => void }) => {
     e.preventDefault()
