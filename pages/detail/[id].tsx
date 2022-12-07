@@ -74,10 +74,12 @@ const Detail = ({ postDetails }: IProps) => {
         userId: userProfile._id,
         comment
       })
+
+      setPost({ ...post, comments: res.data.comments})
+      setComment("")
+      setIsPostingComment(false)
     }
   }
-
- console.log(post)
 
 
   if(!post) return null
